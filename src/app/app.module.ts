@@ -31,15 +31,12 @@ const APP_PROVIDERS = [
 ];
 let providers = {
   "google": {
-    "clientId": "614031125625-bnju3pdna2odqn3hh3rbc4i2ok9l62mc.apps.googleusercontent.com"
-    // "clientId": "614031125625-on3r0hnk86uns9fjfm53fetc7eiocim5.apps.googleusercontent.com"
+    // "clientId": "614031125625-bnju3pdna2odqn3hh3rbc4i2ok9l62mc.apps.googleusercontent.com"
+    "clientId": "614031125625-on3r0hnk86uns9fjfm53fetc7eiocim5.apps.googleusercontent.com"
   },
-  // "linkedin": {
-  //   "clientId": "LINKEDIN_CLIENT_ID"
-  // },
   "facebook": {
     "clientId": "1305229152925402",
-    "apiVersion": "v2.9" //like v2.4 
+    "apiVersion": "v2.9"
   }
 };
 export type StoreType = {

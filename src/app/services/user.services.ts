@@ -92,4 +92,37 @@ export class UserService {
       .then(res => { return res.json(); })
       .catch(this.handleError);
   }
+
+  /////////////    image change   ////////////
+
+  imageChange(image: any, id: String): Promise<any> {
+    var request_url = CONFIG.SERVER_URL + '/accounts/image/' + id;
+    var data =
+      {
+        image: image
+      };
+    return this.http.put(request_url, data, { headers: contentHeaders })
+      .toPromise()
+      .then(res => {
+        return res.json();
+      })
+      .catch(this.handleError);
+  }
+
+
+  /////////////    password change   ////////////
+
+  passwordChange(password: any, id: String): Promise<any> {
+    var request_url = CONFIG.SERVER_URL + '/accounts/password/' + id;
+    var data =
+      {
+        password: password
+      };
+    return this.http.put(request_url, data, { headers: contentHeaders })
+      .toPromise()
+      .then(res => {
+        return res.json();
+      })
+      .catch(this.handleError);
+  }
 }

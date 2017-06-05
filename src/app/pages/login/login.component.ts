@@ -38,11 +38,14 @@ export class Login implements OnInit {
     this.userService.facebook(this.user)
       .then(res => {
         if (res.success) {
-          this.user.email = res.data.email;
-          this.user.name = res.data.username;
-          this.user.photo = res.data.image;
-          this.sharedService.setUser(this.user);
-          this.router.navigate(['/']);
+          if (res.message != "User already exists") {
+            this.router.navigate(['/register']);
+          }
+          else {
+            this.sharedService.setUser(res.data);
+            this.router.navigate(['/']);
+          }
+
         } else {
         }
       });
@@ -52,11 +55,14 @@ export class Login implements OnInit {
     this.userService.google(this.user)
       .then(res => {
         if (res.success) {
-          this.user.email = res.data.email;
-          this.user.name = res.data.username;
-          this.user.photo = res.data.image;
-          this.sharedService.setUser(this.user);
-          this.router.navigate(['/']);
+          if (res.message != "User already exists") {
+            this.router.navigate(['/register']);
+          }
+          else {
+            this.sharedService.setUser(res.data);
+            this.router.navigate(['/']);
+          }
+
         } else {
         }
       });
@@ -68,7 +74,7 @@ export class Login implements OnInit {
       this.userService.Login(this.user)
         .then(res => {
           if (res.success) {
-            this.sharedService.setUser(this.user);
+            this.sharedService.setUser(res.data);
             this.router.navigate(['/']);
           } else {
             this.onlogin = false;

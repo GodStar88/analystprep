@@ -71,7 +71,7 @@ export class Register implements OnInit {
             this.user.name = res.data.username;
             this.user.photo = res.data.image;
             this.sharedService.setUser(this.user);
-            this.router.navigate(['/']);
+            this.router.navigate(['/login']);
           } else {
           }
         });
@@ -83,7 +83,7 @@ export class Register implements OnInit {
             this.user.name = res.data.username;
             this.user.photo = res.data.image;
             this.sharedService.setUser(this.user);
-            this.router.navigate(['/']);
+            this.router.navigate(['/login']);
           } else {
           }
         });
@@ -107,7 +107,7 @@ export class Register implements OnInit {
         .then(res => {
           if (res.success) {
             this.sharedService.setUser(this.user);
-            this.router.navigate(['/']);
+            this.router.navigate(['/login']);
           } else {
             this.onregister = false;
           };

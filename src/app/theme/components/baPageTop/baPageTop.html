@@ -1,6 +1,5 @@
-<div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
-     [ngClass]="{scrolled: isScrolled}">
-  <a routerLink="/pages/dashboard" class="al-logo clearfix"><span>ng2-</span>admin</a>
+<div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)" [ngClass]="{scrolled: isScrolled}">
+  <a routerLink="/pages/dashboard" class="al-logo clearfix"><span>Analyst</span>Prep</a>
   <a href (click)="toggleMenu()" class="collapse-menu-link ion-navicon"></a>
 
   <div class="search">
@@ -11,14 +10,14 @@
   <div class="user-profile clearfix">
     <div class="dropdown al-user-profile">
       <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" data-toggle="dropdown" aria-expanded="false">
-        <img src="{{ ( 'avatar' | baProfilePicture ) }}" *ngIf="user.photo==null">
-        <img src="{{user.photo}}" *ngIf="user.photo!=null">
+        <img src="{{ ( 'avatar' | baProfilePicture ) }}" *ngIf="user.imagelocation==''">
+        <img src="{{user.imagelocation}}" *ngIf="user.imagelocation!=''">
       </a>
       <ul class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-profile-dd">
         <li class="dropdown-item"><a href><i class="fa fa-user"></i>Profile</a></li>
         <li class="dropdown-item"><a href><i class="fa fa-cog"></i>Settings</a></li>
         <!--<li class="dropdown-item"><a href class="signout" (click)="logOut()"><i class="fa fa-power-off"></i>Sign out</a></li>-->
-        <li class="dropdown-item"><a  class="signout" (click)="logOut()"><i class="fa fa-power-off"></i>Sign out</a></li>
+        <li class="dropdown-item"><a class="signout" (click)="logOut()"><i class="fa fa-power-off"></i>Sign out</a></li>
       </ul>
     </div>
     <ba-msg-center></ba-msg-center>

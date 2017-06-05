@@ -1,4 +1,4 @@
-<div class="row">
+<!--<div class="row">
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
     <pie-chart></pie-chart>
   </div>
@@ -48,4 +48,102 @@
            baCardClass="xmedium-card feed-comply-panel with-scroll calendar-panel">
     <calendar></calendar>
   </ba-card>
+</div>-->
+
+
+<div class="row">
+  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+    <ba-card title="{{user.username}}" baCardClass="with-scroll button-panel">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-12">
+          <img src="{{ ( 'avatar' | baProfilePicture ) }}" *ngIf="user.imagelocation==''" style="width: 100%; height: 100%">
+          <img src="{{user.imagelocation}}" *ngIf="user.imagelocation!=''" style="width: 100%; height: 100%">
+        </div>
+
+        <div class="col-md-6 col-sm-12 col-12" style="text-align: center">
+          <div class="button-wrapper">
+            <button type="button" class="btn btn-warning" (click)="onChangePic()">Change Picture</button>
+          </div>
+          <div class="button-wrapper">
+            <button type="button" class="btn btn-danger" (click)="onChangePass()">Edit Password</button>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-12">
+          <label class="control-label">Email: </label>
+          <label class="control-label">{{user.email}}</label>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <label class="control-label">CFA Level 1 Premiun:</label>
+        </div>
+      </div>
+    </ba-card>
+  </div>
+  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+    <pie-chart></pie-chart>
+  </div>
+</div>
+
+
+
+<!-- Modal Change picture -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="auth-block modal-content">
+      <div class="row">
+        <div class="col-sm-8" style="text-align: center">
+          <img-cropper #cropper [image]="data" [settings]="cropperSettings"></img-cropper>
+          <div class="fileUpload btn btn-primary">
+            <span>Change picture</span>
+            <input id="custom-input" type="file" class="upload" (change)="fileChangeListener($event)">
+          </div>
+        </div>
+        <div class="col-sm-4" style="text-align: center">
+          <img [src]="data.image" class="img-responsive cropperImage" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+          <button type="button" data-dismiss="modal" class="btn btn-success" (click)="imageSave()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Change Password -->
+<div class="modal fade" id="myModalPassword" role="dialog">
+  <div class="modal-dialog">
+    <div class="auth-block modal-content1">
+      <div class="form-group row">
+        <label for="input01" class="col-sm-5 control-label">Old Password</label>
+        <div class="col-sm-7">
+          <input type="password" class="form-control" [(ngModel)]="oldPassword" id="input01" placeholder="Password">
+           <span *ngIf="!onOld" class="help-block sub-little-text">Invalid password.</span>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="input02" class="col-sm-5 control-label">New Password</label>
+        <div class="col-sm-7">
+          <input type="password" class="form-control" [(ngModel)]="newPassword" id="input02" placeholder="Password">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="input03" class="col-sm-5 control-label">Confirm Password</label>
+        <div class="col-sm-7">
+          <input type="password" class="form-control" [(ngModel)]="confirmPassword" id="input03" placeholder="Password">
+          <span *ngIf="!onChange" class="help-block sub-little-text">Passwords don't match.</span>
+        </div>
+      </div>
+
+      <div class="row" style="text-align: center">
+        <div class="button-wrapper btn-pass">
+          <button type="button" data-dismiss="modal" class="btn btn-danger btn-pass" (click)="changePassword()">Change Password</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

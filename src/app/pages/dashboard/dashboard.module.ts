@@ -1,4 +1,4 @@
-import { NgModule }      from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppTranslationModule } from '../../app.translation.module';
@@ -22,14 +22,16 @@ import { PieChartService } from './pieChart/pieChart.service';
 import { TodoService } from './todo/todo.service';
 import { TrafficChartService } from './trafficChart/trafficChart.service';
 import { UsersMapService } from './usersMap/usersMap.service';
-
+import { ImageUploadModule } from 'ng2-imageupload';
+import { ImageCropperComponent, CropperSettings, Bounds } from 'ng2-img-cropper';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     AppTranslationModule,
     NgaModule,
-    routing
+    routing,
+    ImageUploadModule
   ],
   declarations: [
     PopularApp,
@@ -40,7 +42,8 @@ import { UsersMapService } from './usersMap/usersMap.service';
     Feed,
     Todo,
     Calendar,
-    Dashboard
+    Dashboard,
+    ImageCropperComponent
   ],
   providers: [
     CalendarService,
@@ -50,6 +53,7 @@ import { UsersMapService } from './usersMap/usersMap.service';
     TodoService,
     TrafficChartService,
     UsersMapService
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashboardModule {}

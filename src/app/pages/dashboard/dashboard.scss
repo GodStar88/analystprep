@@ -1,6 +1,6 @@
 @media screen and (min-width: 1620px) {
   .row.shift-up {
-    > * {
+    * {
       margin-top: -573px;
     }
   }
@@ -20,4 +20,89 @@
 
 .blurCalendar {
   height: 475px;
+}
+
+.button-wrapper {
+  // width: 130px !important;
+  padding: 10px;
+}
+
+.btn {
+  width: 130px !important;
+}
+
+.cropperImage {
+  width: 200px;
+  height: 200px; // border-radius: 50%;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  margin-bottom: 65px;
+}
+
+.cropperBtn {
+  width: 100px;
+  margin: 0px;
+}
+
+
+/**/
+
+.setPage {
+  padding: 30px;
+}
+
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.img-circle {
+  // border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.button {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.modal-content {
+  background: #509ECE !important;
+  width: 700px !important;
+  padding: 20px !important;
+  border: 2px solid #009DED;
+  border-radius: 10px !important;
+}
+
+.modal-content1 {
+  background: #509ECE !important;
+  width: 400px !important;
+  padding: 20px !important;
+  border: 2px solid #009DED;
+  border-radius: 10px !important;
+}
+
+.control-label {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.btn-pass {
+  display:block;
+  margin: 0 auto;
+  width: 150px !important;
 }
