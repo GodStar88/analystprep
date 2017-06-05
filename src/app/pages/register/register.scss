@@ -1,0 +1,25 @@
+@import '../../theme/sass/auth';
+select.form-control[multiple] {
+  overflow-y: scroll;
+}
+
+select.form-control {
+  color: $default;
+}
+
+optgroup {
+  color: black;
+}
+
+.errorMsg {
+  text-align: center;
+  margin: 30px;
+  font-size: 15px;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: none;
+    margin: 30px auto;
+  }
+}
